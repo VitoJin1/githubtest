@@ -1,0 +1,29 @@
+git管理所有文件只有4种状态 untracked unmodified modified staged(暂存)
+$git status
+显示当前文件的状态
+$git diff
+显示所有tracked文件里unmodified文件和modified文件的差别
+$git diff --staged
+显示modified文件和staged文件的差别
+当本地修改文件之后，没git add之前，用git diff能看到变化，git add之后就能能用git diff --staged 查看到变化，git commit -m之后git diff --staged也看不到变化。
+当git status 没有消息跳出来之后，就说明所有修改已经暂存，可以准备提交。
+
+
+删除文件 
+直接删除git add完的文件之后,用git status可以查看删除了那些文件，用 git rm可删除已经add的文件。如果是已经staged的文件，则使用git rm --cached  **
+$git rm folder/\*.log
+删除folder目录下所有log后缀的文件
+$git rm \*aa
+删除当前目录下以aa结尾的文件
+$git rm -f **
+删除本地及暂存区的**文件
+$git rm --cached **
+删除暂存区，保留本地文件 
+
+移动文件
+$git mv from_file to_file
+
+上传本地仓库到github
+Github新建一个仓库之后复制url
+$git remote add origin +url
+$git push -u origin master
