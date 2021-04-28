@@ -27,3 +27,16 @@ $git mv from_file to_file
 Github新建一个仓库之后复制url
 $git remote add origin +url
 $git push -u origin master
+
+在github上面编辑的文本复制到本地
+$git remote -v
+查看（远程）仓库版本
+$git fetch origin master:temp
+fetch 远程仓库版本 作为temp
+$git diff temp
+比较temp和本地仓库的区别，用作确认
+$git merge temp
+和本地仓库合并
+$git branch -d temp
+删除临时仓库
+
